@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Список користувачів</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .user-list {
+        list-style: none;
+        padding: 0;
+      }
+      .user-item {
+        border: 1px solid #ddd;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .user-item:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Список користувачів</h1>
+    <ul class="user-list">
+      <% users.forEach(function(user) { %>
+      <li class="user-item">
+        <strong>Ім'я користувача:</strong> <%= user.username %><br />
+        <strong>Email:</strong> <%= user.email %><br />
+        <strong>Дата створення:</strong> <%= new
+        Date(user.createdAt).toLocaleString() %>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
